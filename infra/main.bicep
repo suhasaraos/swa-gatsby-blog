@@ -30,7 +30,3 @@ module resources './staticwebsite.bicep' = {
     tags: tags
   }
 }
-
-output SWA_BASE_URL string = resources.outputs.WEB_URI
-output AZURE_LOCATION string = location
-output AZURE_TENANT_ID string = tenant().tenantId

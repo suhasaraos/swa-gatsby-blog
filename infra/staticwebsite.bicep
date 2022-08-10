@@ -17,4 +17,3 @@ resource swa 'Microsoft.Web/staticSites@2022-03-01' = {
   }
 }
 
-output WEB_URI string = 'https://${swa.properties.defaultHostname}'
