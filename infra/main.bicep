@@ -9,7 +9,7 @@ param name string
 @description('Primary location for all resources')
 param location string
 
-var resourceToken = 'suhas' //toLower(uniqueString(subscription().id, name, location))
+var resourceToken = toLower(uniqueString(subscription().id, name, location))
 
 var tags = {
   'azd-env-name': name
