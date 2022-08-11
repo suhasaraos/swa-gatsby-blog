@@ -2,7 +2,7 @@ param location string
 param resourceToken string
 param tags object
 
-resource swa 'Microsoft.Web/staticSites@2022-03-01' = {
+resource swa 'Microsoft.Web/staticSites@2021-01-01' = {
   name: 'swa-${resourceToken}'
   location: location
   tags: union(tags, {
@@ -13,7 +13,7 @@ resource swa 'Microsoft.Web/staticSites@2022-03-01' = {
     tier: 'Free'
   }
   properties: {
-    provider: 'Custom'
   }
 }
 
+output WEB_URI string = 'https://${swa.properties.defaultHostname}'

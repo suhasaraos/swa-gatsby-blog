@@ -9,7 +9,7 @@ param name string
 @description('Primary location for all resources')
 param location string
 
-var resourceToken = toLower(uniqueString(subscription().id, name, location))
+var resourceToken = 'suhas' //toLower(uniqueString(subscription().id, name, location))
 
 var tags = {
   'azd-env-name': name
@@ -30,3 +30,7 @@ module resources './staticwebsite.bicep' = {
     tags: tags
   }
 }
+
+output REACT_APP_WEB_BASE_URL string = resources.outputs.WEB_URI
+output AZURE_LOCATION string = location
+output AZURE_TENANT_ID string = tenant().tenantId
